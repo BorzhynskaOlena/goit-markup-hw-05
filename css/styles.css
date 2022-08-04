@@ -58,7 +58,7 @@ img {
 .section {
   padding: 94px 0;
 }
-/* Шапка сайту */
+/* ---------------------------------------Шапка сайту--------------------------------- */
 .box-header,
 .header-nav,
 .header-nav-list {
@@ -156,7 +156,7 @@ img {
 .page-header {
   border: 1px solid var(--border-potfolio-color);
 }
-/* Блок Герой */
+/* ----------------------------------------Блок Герой--------------------------------- */
 .hero {
   max-width: 1600px;
   height: 600px;
@@ -213,7 +213,7 @@ img {
   background-color: var(--secondary-accent-color);
 }
 
-/* Преимущества */
+/* ------------------------------------Переваги------------------------------------ */
 .benefits-title,
 .portfolio-title {
   position: absolute;
@@ -267,7 +267,7 @@ img {
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
 }
-/* Чем занимаемся, Наша команда*/
+/* ----------------------------------Чим займаємось-----------------------------*/
 .work {
   padding-top: 0;
 }
@@ -309,7 +309,7 @@ align-items: center;
 position: absolute;
 bottom: 0;
 }
-
+/* --------------------------------------Наша команда -----------------------------*/
 .team-list {
   display: flex;
   gap: 30px;
@@ -400,7 +400,7 @@ padding: 30px; 0
   fill: currentColor;
 }
 
-/* Футер */
+/* --------------------------------------Футер-------------------------------- */
 .footer-box {
 display: flex;
 align-items: baseline;
@@ -447,11 +447,12 @@ align-items: baseline;
 .footer-contacts-tel:focus {
   color: var(--accent-color);
 }
-/* Фон для Героя и Футера */
+/*Фон для Героя та Футера */
 .hero,
 .footer {
   background-color: var(--secondary-background-color);
 }
+/* -------------------------Приєднуйтесь-------------------- */
 .join-box {
   margin-left: 70px;
 }
@@ -489,7 +490,53 @@ align-items: baseline;
 .join-icon {
   fill: currentColor;
 }
-/* ---------------ПОРТФОЛИО -----------------*/
+/* --------------------------------Стилі для модального вікна -------------------------*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backdrop-bg-color);
+  transition: opacity var(--time-duration) var(--time-function), visibility var(--time-duration) var(--time-function);
+}
+.modal-window {
+  width: 528px;
+  min-height: 581px;
+  border-radius: 4px;
+  background-color: var(--main-background-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.close-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--main-background-color);
+  border:1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.icon-X {
+  width: 11px;
+  height: 11px;
+  align-items: center;
+  justify-content: center;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* --------------------------------------ПОРТФОЛІО ------------------------------*/
 .portfolio-btn-list {
   margin-bottom: 50px;
 }
@@ -525,7 +572,7 @@ align-items: baseline;
 .portfolio-btn-list .portfolio-btn-item:not(:last-child) {
   margin-right: 8px;
 }
-
+/* ---------------------------------------Приклади робіт -----------------------*/
 .example-list {
   display: flex;
   flex-wrap: wrap;
@@ -595,46 +642,3 @@ overflow: auto;
   transform: translateY(0);
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--backdrop-bg-color);
-  transition: opacity var(--time-duration) var(--time-function), visibility var(--time-duration) var(--time-function);
-}
-.modal-window {
-  width: 528px;
-  min-height: 581px;
-  border-radius: 4px;
-  background-color: var(--main-background-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.close-btn{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: var(--main-background-color);
-  border:1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-}
-.icon-X {
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
