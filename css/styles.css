@@ -17,6 +17,9 @@
   --footer-icon-bc: rgba(255, 255, 255, 0.1);
   --bg-work-text-color:rgba(47, 48, 58, 0.8);
   --bg-example-box-color: rgba(33, 150, 243, 0.9);
+  --time-duration: 250ms;
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --backdrop-bg-color: rgba(0, 0, 0, 0.2);
 }
 h1,
 h2,
@@ -90,6 +93,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--primary-text-color);
+  transition: color var(--time-duration) var(--time-function);
 }
 .header-nav-item {
   margin-right: 50px;
@@ -135,6 +139,7 @@ img {
   align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color var(--time-duration) var(--time-function);
 }
 
 .header-contacts-mail:hover,
@@ -201,6 +206,7 @@ img {
   border: transparent;
   display: block;
   margin: 0 auto;
+  transition: background-color var(--time-duration) var(--time-function);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -351,6 +357,7 @@ padding: 30px; 0
   outline: transparent;
   color: var(--icon-color);
   background-color: var(--main-background-color);
+  transition: color var(--time-duration) var(--time-function), backgound-color var(--time-duration) var(--time-function);
 }
 
 .soc-net-link:hover,
@@ -380,6 +387,7 @@ padding: 30px; 0
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   color: var(--icon-color);
+  transition: color var(--time-duration) var(--time-function), border-color var(--time-duration) var(--time-function);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -431,6 +439,7 @@ align-items: baseline;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--footer-contacts-color);
+  transition: color var(--time-duration) var(--time-function);
 }
 .footer-contacts-mail:hover,
 .footer-contacts-tel:hover,
@@ -470,6 +479,7 @@ align-items: baseline;
   outline: transparent;
   color: var(--minor-text-color);
   background-color: var(--footer-icon-bc);
+  transition: background-color var(--time-duration) var(--time-function);
 }
 
 .join-link:hover,
@@ -497,6 +507,7 @@ align-items: baseline;
   display: inline-block;
   text-align: center;
   border: transparent;
+  transition: color var(--time-duration) var(--time-function), background-color var(--time-duration) var(--time-function), box-shadow var(--time-duration) var(--time-function);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus,
@@ -542,6 +553,7 @@ align-items: baseline;
 }
 .example-thumb {
   position: relative;
+  overflow: hidden;
 }
 .example-overlay {
 font-size: 18px;
@@ -551,14 +563,13 @@ color: var(--minor-text-color);
 background-color: var(--bg-example-box-color);
 width: 100%;
 height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0 24px;
+padding: 63px 24px;
 position: absolute;
-bottom: 0;
-opacity: 0;
-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+top: 0;
+left: 0; 
+transform: translateY(100%);
+transition: transform var(--time-duration) var(--time-function);
+overflow: auto;
 }
 .example-description {
   padding: 20px 24px;
@@ -573,11 +584,57 @@ transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .example-link {
   display: inline-block;
+  transition: box-shadow var(--time-duration) var(--time-function);
 }
 .example-link:hover,
 .example-link:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.example-link:hover .example-overlay {
-  opacity: 1;
+.example-link:hover .example-overlay,
+.example-link:focus .example-overlay {
+  transform: translateY(0);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backdrop-bg-color);
+  transition: opacity var(--time-duration) var(--time-function), visibility var(--time-duration) var(--time-function);
+}
+.modal-window {
+  width: 528px;
+  min-height: 581px;
+  border-radius: 4px;
+  background-color: var(--main-background-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.close-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--main-background-color);
+  border:1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.icon-X {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
