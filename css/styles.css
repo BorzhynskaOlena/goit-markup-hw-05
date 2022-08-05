@@ -357,7 +357,7 @@ padding: 30px; 0
   outline: transparent;
   color: var(--icon-color);
   background-color: var(--main-background-color);
-  transition: color var(--time-duration) var(--time-function), backgound-color var(--time-duration) var(--time-function);
+  transition: color var(--time-duration) var(--time-function), background-color var(--time-duration) var(--time-function);
 }
 
 .soc-net-link:hover,
@@ -428,9 +428,7 @@ align-items: baseline;
   color: var(--minor-text-color);
   margin-bottom: 9px;
 }
-.footer-contacts-mail {
-  margin-bottom: 9px;
-}
+
 .footer-contacts-mail,
 .footer-contacts-tel {
   font-style: normal;
@@ -440,6 +438,7 @@ align-items: baseline;
   letter-spacing: 0.03em;
   color: var(--footer-contacts-color);
   transition: color var(--time-duration) var(--time-function);
+  margin-bottom: 9px;
 }
 .footer-contacts-mail:hover,
 .footer-contacts-tel:hover,
